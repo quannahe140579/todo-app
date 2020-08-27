@@ -14,3 +14,7 @@ body{
 .strike{
     text-decoration:line-through;
 }
+.input1{
+    height: 50px;
+    width: 30px;
+}

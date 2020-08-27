@@ -41,30 +41,46 @@
 
       <div class="row" id="todo-list">
         <div class="col-sm-6 col-sm-offset-3">
-          <div class="checkbox" ng-repeat="todo in todos">
-            <input
-              type="checkbox"
-              ng-model="todo.isDone"
-              ng-change="updateTodo(todo)"
-            />
-            <a href ng-click="deleteTodo(todo)">
-              <i class="fa fa-remove"></i
-            ></a>
-            <a
-              href
-              ng-click="textBtnForm.$show()"
-              ng-hide="textBtnForm.$visible"
-            >
-              <i class="fa fa-edit"></i
-            ></a>
-            <span
-              ng-class="{ strike: todo.isDone }"
-              editable-text="todo.text"
-              e-form="textBtnForm"
-              onaftersave="updateTodo(todo)"
-              >{{ todo.text }}</span
-            >
-          </div>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Todo</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="todo in todos">
+                <th scope="row"><input
+                  type="checkbox"
+                  ng-model="todo.isDone"
+                  ng-change="updateTodo(todo)"
+                  class="input1"
+                /></th>
+                <td><span
+                  ng-class="{ strike: todo.isDone }"
+                  editable-text="todo.text"
+                  e-form="textBtnForm"
+                  onaftersave="updateTodo(todo)"
+                  
+                  >{{ todo.text }}</span
+                ></td>
+                <td><a href ng-click="deleteTodo(todo)">
+                  <i class="fa fa-remove"></i
+                ></a>
+                <a
+                  href
+                  ng-click="textBtnForm.$show()"
+                  ng-hide="textBtnForm.$visible"
+                >
+                  <i class="fa fa-edit"></i
+                ></a></td>
+
+              </tr>
+              
+            </tbody>
+          </table>
+
         </div>
       </div>
       <div class="text-center" ng-show="loading">
