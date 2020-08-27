@@ -1,6 +1,6 @@
 var configValue = require("./config.json");
 module.exports = {
     getDbConnectionString: function(){
-        return `mongodb+srv://${configValue.username}:${configValue.password}@cluster0.u4vmb.mongodb.net/FirstProject?retryWrites=true&w=majority`
+        return `mongodb://root:example@localhost:27017/FirstProject?authSource=admin`
     }
 }

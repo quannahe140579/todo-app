@@ -4,5 +4,5 @@ var todoSchema = Schema({
     text: String,
     isDone: Boolean
 });
-var Todos = mongoose.model("Todos111", todoSchema);
+var Todos = mongoose.model("todos111", todoSchema);
 module.exports = Todos;

@@ -16,8 +16,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
-mongoose.connect(configValue.getDbConnectionString(),{ useUnifiedTopology: true }, function () {
-  console.log("Connect succsess!");
+mongoose.connect(configValue.getDbConnectionString(),{ useUnifiedTopology: true }, function (err) {
+  
+  if(err) {
+    console.error('Can not connect to mongodb', err)
+  } else {
+
+    console.log("Connect succsess!");
+
+  }
+  
 });
 
 app.get("/", function (req, res) {
