@@ -7,7 +7,7 @@ function getTodos(res){
             console.log(err)
             res.send(err);
         }else{
-            console.log("hahaha")
+            console.log("hahaha 123")
             res.json(result);
         }
     });
